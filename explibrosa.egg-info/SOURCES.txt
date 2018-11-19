@@ -1,8 +1,0 @@
-README.md
-explibrosa/__init__.py
-explibrosa.egg-info/PKG-INFO
-explibrosa.egg-info/SOURCES.txt
-explibrosa.egg-info/dependency_links.txt
-explibrosa.egg-info/requires.txt
-explibrosa.egg-info/top_level.txt
-explibrosa.egg-info/zip-safe

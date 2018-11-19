@@ -1,3 +1,7 @@
 *.wav
 data
 *pyc
+.ipynb_checkpoints
+explibrosa.egg-info
+.gitignore
+__pycache__
