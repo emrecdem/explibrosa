@@ -14,6 +14,8 @@ import matplotlib.pyplot as plt
 
 __version__ = "0.0.0.dev1"
 
+# This is the column name in the detection dataframe
+# That column contains the name of the detected feature.
 _FEAT_NAME_ID = "feature"
 
 def get_info(audio_file_path):
@@ -31,16 +33,19 @@ def get_info(audio_file_path):
 
 
 def get_feature_time_series(audio_file_path, 
-                            output_directory,
+                            output_directory=None,
                             force_run = False,
                             cut_start=None, cut_end=None, 
                             verbose=True):
     """
     cut_start and cut_end: select a part of the recording to analyse. In minutes
     """
-    input_filename = os.path.splitext(os.path.basename(audio_file_path))[0]
-    output_path = os.path.join(output_directory, input_filename)
-    feature_file_path = output_path+"_features.csv"
+    if output_directory:
+        input_filename = os.path.splitext(os.path.basename(audio_file_path))[0]
+        output_path = os.path.join(output_directory, input_filename)
+        feature_file_path = output_path+"_features.csv"
+    else:
+        input_filename, output_path, feature_file_path = None, None, "" 
 
     if os.path.isfile(feature_file_path) and not force_run:
         print("File found on disk, reading in: ", feature_file_path)
@@ -113,7 +118,8 @@ def get_feature_time_series(audio_file_path,
         features = pd.DataFrame({"timestamp": t_frame, "rmse":rmse, "zrc":zrc, "pitch":pitch_smoothtrack})
 
         # Outputting results
-        features.to_csv(feature_file_path, index=False)
+        if feature_file_path != "":
+            features.to_csv(feature_file_path, index=False)
 
         if verbose: print("TOTAL execution time: %s min" % round((time.time() - start_time)/60, 2))
 
