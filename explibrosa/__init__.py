@@ -10,8 +10,6 @@ import librosa
 
 import exploface
 
-import matplotlib.pyplot as plt
-
 __version__ = "0.0.0.dev1"
 
 # This is the column name in the detection dataframe
