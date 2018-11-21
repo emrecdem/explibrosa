@@ -3,8 +3,7 @@ Exploration and feature generation for speech in audio files using the librosa l
 
 ## Installation
 To install explibrosa use pip:
-- pip install --index-url https://test.pypi.org/simple/ example_pkg
-- Note: we currently use the test.pypi since we are still testing and experimenting.
+- pip install explibrosa
 
 Installation instructions for librosa:
 - You can use pip install librosa

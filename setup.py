@@ -22,5 +22,5 @@ setuptools.setup(name='explibrosa',
         "Operating System :: OS Independent",
       ),
       packages=setuptools.find_packages(),
-      install_requires=['numpy', 'pandas', 'elanwriter', 'exploface'],
+      install_requires=['numpy', 'pandas', 'elanwriter', 'exploface', 'librosa'],
       zip_safe=True)
