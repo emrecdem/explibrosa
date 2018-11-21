@@ -6,3 +6,5 @@ explibrosa.egg-info
 .gitignore
 __pycache__
 TUTORIALS\data\*
+build
+dist
